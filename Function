@@ -1,12 +1,16 @@
 local ui = game:GetService("CoreGui"):FindFirstChild("Z   E   N   P   E   R   H   U   B")
 if ui then
- ui:Destroy()
+    ui:Destroy()
 end
 local Config = {
-    WindowName = "Z   E   N   P   E   R   H   U   B",
+    WindowName = "zenper",
     Color = Color3.fromRGB(0, 255, 0),
-    Keybind = Enum.KeyCode.RightControl
 }
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/MCHUB-Trash/MCHUB-Trash/main/UI_Library.Lua"))()
+local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
+
+local Tab1 = Window:CreateTab("Auto")
+local AutoFarm = Tab1:CreateSection("Main")
 if not _G.Marine or _G.Pirate then
     spawn(function()
         while wait() do
@@ -79,7 +83,38 @@ function Click()
     game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 end
 
-el <= 59 then 
+function CheckQuest()
+    local MyLevel = game.Players.LocalPlayer.Data.Level.Value
+    if OldWorld then
+        if MyLevel == 1 or MyLevel <= 9 then 
+            Ms = "Bandit [Lv. 5]"
+            NaemQuest = "BanditQuest1"
+            LevelQuest = 1
+            NameMon = "Bandit"
+            CFrameQuest = CFrame.new(1061.66699, 16.5166187, 1544.52905)
+            CFrameMon = CFrame.new(1199.31287, 52.2717781, 1536.91516)
+        elseif MyLevel == 10 or MyLevel <= 14 then 
+            Ms = "Monkey [Lv. 14]"
+            NaemQuest = "JungleQuest"
+            LevelQuest = 1
+            NameMon = "Monkey"
+            CFrameQuest = CFrame.new(-1604.12012, 36.8521118, 154.23732)
+            CFrameMon = CFrame.new(-1772.4093017578, 60.860641479492, 54.872589111328)
+        elseif MyLevel == 15 or MyLevel <= 29 then 
+            Ms = "Gorilla [Lv. 20]"
+            NaemQuest = "JungleQuest"
+            LevelQuest = 2
+            NameMon = "Gorilla"
+            CFrameQuest = CFrame.new(-1604.12012, 36.8521118, 154.23732)
+            CFrameMon = CFrame.new(-1223.52808, 6.27936459, -502.292664)
+        elseif MyLevel == 30 or MyLevel <= 39 then 
+            Ms = "Pirate [Lv. 35]"
+            NaemQuest = "BuggyQuest1"
+            LevelQuest = 1
+            NameMon = "Pirate"
+            CFrameQuest = CFrame.new(-1139.59717, 4.75205183, 3825.16211)
+            CFrameMon = CFrame.new(-1219.32324, 4.75205183, 3915.63452)
+        elseif MyLevel == 40 or MyLevel <= 59 then 
             Ms = "Brute [Lv. 45]"
             NaemQuest = "BuggyQuest1"
             LevelQuest = 2
@@ -473,7 +508,6 @@ el <= 59 then
         end
     end
 end
-
 
 _G.bringmob = true
 CheckQuest()
