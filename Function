@@ -56,15 +56,7 @@ if _G.Pirate then
     end)
 end
 
-local placeId = game.PlaceId
-Magnet = true
-if placeId == 2753915549 then
-    OldWorld = true
-elseif placeId == 4442272183 then
-    NewWorld = true
-elseif placeId == 7449423635 then
-    ThreeWorld = true
-end
+
 
 _G.FarmSwiish = false
 spawn(function()
@@ -81,6 +73,16 @@ end)
 function Click()
     game:GetService'VirtualUser':CaptureController()
     game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+end
+
+local placeId = game.PlaceId
+Magnet = true
+if placeId == 2753915549 then
+    OldWorld = true
+elseif placeId == 4442272183 then
+    NewWorld = true
+elseif placeId == 7449423635 then
+    ThreeWorld = true
 end
 
 function CheckQuest()
